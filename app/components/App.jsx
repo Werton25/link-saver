@@ -6,19 +6,17 @@ import AddLinkForm from "./AddLinkForm";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this._addLink = this._addLink.bind(this);
     this.state = {links: []};
   }
 
-  _addLink() {
-    const links = this.state.links;
-    links.push({id: links.length + 1, value: 'link'});
-    this.setState({links: links});
-  }
+  addLink = () => {
+    const links = [...this.state.links, {id: this.state.links.length + 1, value: 'link'}];
+    this.setState({links});
+  };
 
   render() {
-    const trs = this.state.links.map((link) =>
-      <tr>
+    const links = this.state.links.map((link, index) =>
+      <tr key={index}>
         <th scope="row">{link.id}</th>
         <td>{link.value}</td>
       </tr>
@@ -29,7 +27,7 @@ class App extends React.Component {
         <LinkSaverNavbar/>
         <br/>
         <Container>
-          <AddLinkForm onClick={this._addLink}/>
+          <AddLinkForm onAdd={this.addLink}/>
           <br/>
           <Table striped size="sm">
             <thead>
@@ -39,7 +37,7 @@ class App extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {trs}
+            {links}
             </tbody>
           </Table>
         </Container>

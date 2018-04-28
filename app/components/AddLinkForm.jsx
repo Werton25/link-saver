@@ -5,7 +5,7 @@ const AddLinkForm = (props) => (
   <InputGroup>
     <Input placeholder="Enter link"/>
     <InputGroupAddon addonType="append">
-      <Button color="primary" onClick={props.onClick}>Add Link</Button>
+      <Button color="primary" onClick={props.onAdd}>Add Link</Button>
     </InputGroupAddon>
   </InputGroup>
 );
