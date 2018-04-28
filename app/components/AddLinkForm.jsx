@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Input, InputGroup, InputGroupAddon} from "reactstrap";
+import {Button, Input, InputGroup, InputGroupAddon} from 'reactstrap';
 
 const AddLinkForm = (props) => (
   <InputGroup>

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import {Container, Table} from 'reactstrap';
-import LinkSaverNavbar from "./LinkSaverNavbar";
-import AddLinkForm from "./AddLinkForm";
+import LinkSaverNavbar from './LinkSaverNavbar';
+import AddLinkForm from './AddLinkForm';
+import TableRowLink from './TableRowLink';
 
-class App extends React.Component {
+class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {links: []};
@@ -15,15 +16,8 @@ class App extends React.Component {
   };
 
   render() {
-    const links = this.state.links.map((link, index) =>
-      <tr key={index}>
-        <th scope="row">{link.id}</th>
-        <td>{link.value}</td>
-      </tr>
-    );
-
     return (
-      <div>
+      <React.Fragment>
         <LinkSaverNavbar/>
         <br/>
         <Container>
@@ -37,11 +31,13 @@ class App extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {links}
+            {this.state.links.map(link =>
+              <TableRowLink id={link.id} value={link.value}/>
+            )}
             </tbody>
           </Table>
         </Container>
-      </div>
+      </React.Fragment>
     );
   }
 }
