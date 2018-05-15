@@ -2,24 +2,23 @@
   "name": "link-saver",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "homepage": "./",
+  "main": "src/electron-runner.js",
   "dependencies": {
-    "bootstrap": "4.1.0",
     "react": "16.3.2",
-    "react-dom": "16.3.2",
-    "reactstrap": "5.0.0"
+    "react-dom": "16.3.2"
   },
   "devDependencies": {
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-2": "6.24.1",
-    "css-loader": "0.28.11",
-    "electron-prebuilt-compile": "1.8.4",
-    "electron-react-devtools": "0.5.3"
+    "react-scripts": "1.1.4",
+    "electron": "2.0.0"
   },
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dev": "nf start -p 3000"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Werton25/link-saver/issues"
-  },
-  "homepage": "https://github.com/Werton25/link-saver#readme"
+  }
 }
