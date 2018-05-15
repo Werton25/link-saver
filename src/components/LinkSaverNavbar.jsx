@@ -3,7 +3,7 @@ import {Navbar, NavbarBrand} from 'reactstrap';
 
 const LinkSaverNavbar = () => (
   <Navbar color="light" light expand="md">
-    <NavbarBrand href="/">Link Saver</NavbarBrand>
+    <NavbarBrand href="#">Link Saver</NavbarBrand>
   </Navbar>
 );
 
